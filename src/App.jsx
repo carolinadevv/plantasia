@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar/>
       <ItemListContainer greeting="¡Welcome to Plantasia!"></ItemListContainer>
     </>
   );
