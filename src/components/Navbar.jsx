@@ -19,22 +19,27 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav me-auto">
+            {/* Espacio vacío para mantener el logo a la izquierda */}
+          </ul>
           <ul className="navbar-nav">
+            {/* Categorías principales */}
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link active" href="#">
                 Home
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Features
+                Sets
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Pricing
+                Accessories
               </a>
             </li>
+            {/* Dropdown de Plants */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -43,26 +48,62 @@ const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown link
+                Plants
               </a>
               <ul className="dropdown-menu">
                 <li>
                   <a className="dropdown-item" href="#">
-                    Action
+                    Indoor Plants
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Another action
+                    Outdoor Plants
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Something else here
+                    Succulents
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Flowering Plants
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Medicinal Plants
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Cacti
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Pots and Accessories
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Large Plants
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Low Maintenance Plants
                   </a>
                 </li>
               </ul>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contact
+              </a>
+            </li>
+            {/* Carrito */}
             <li className="nav-item">
               <CartWidget />
             </li>
