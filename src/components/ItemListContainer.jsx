@@ -1,19 +1,34 @@
-const ItemListContainer = ({ greeting }) => {
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    backgroundColor: "#f4f4f4",
-    fontSize: "24px",
-    color: "#333",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    padding: "20px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  };
+import { useEffect, useState } from "react";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+import getAsyncData, { getAsyncItemsByCategory } from "../data/getAsyncData";
 
-  return <div style={containerStyle}>{greeting}</div>;
+const ItemListContainer = ({ greeting }) => {
+  const { catid } = useParams();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (catid === undefined) {
+      const productsPromise = getAsyncData();
+      productsPromise
+        .then((products) => {
+          console.log("products", products), setProducts(products);
+        })
+        .catch((error) => alert(error));
+    } else {
+      const productsPromise = getAsyncItemsByCategory(catid);
+      productsPromise
+        .then((products) => {
+          console.log("products", products), setProducts(products);
+        })
+        .catch((error) => alert(error));
+    }
+  }, [catid]);
+  return (
+    <div>
+      <ItemList greeting={greeting} products={products} />
+    </div>
+  );
 };
 
 export default ItemListContainer;

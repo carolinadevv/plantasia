@@ -1,12 +1,13 @@
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <NavLink className="navbar-brand" to="/">
           Plantasia
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,26 +21,26 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav me-auto">
-            {/* Espacio vacío para mantener el logo a la izquierda */}
+            {/* Blank space to keep the logo to the left*/}
           </ul>
           <ul className="navbar-nav">
-            {/* Categorías principales */}
+            {/* Categories main */}
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <NavLink className="nav-link active" to="/">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link active" to="category/sets">
                 Sets
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Accessories
-              </a>
+              <NavLink className="nav-link active" to="category/accesories">
+                Accesories
+              </NavLink>
             </li>
-            {/* Dropdown de Plants */}
+            {/* Dropdown Plants */}
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -52,58 +53,34 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink
+                    className="dropdown-item"
+                    to="category/Indoor Plants"
+                  >
                     Indoor Plants
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink
+                    className="dropdown-item"
+                    to="category/Outdoor Plants"
+                  >
                     Outdoor Plants
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink className="dropdown-item" to="category/Succulents">
                     Succulents
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Flowering Plants
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Medicinal Plants
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Cacti
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Pots and Accessories
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Large Plants
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Low Maintenance Plants
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink className="nav-link active" to="contact">
                 Contact
-              </a>
+              </NavLink>
             </li>
-            {/* Carrito */}
+            {/* Cart */}
             <li className="nav-item">
               <CartWidget />
             </li>
