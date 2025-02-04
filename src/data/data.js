@@ -1,9 +1,10 @@
 const products = [
   {
     id: 1,
-    title: "Monstera Deliciosa",
+    title: "Monstera Delicious",
     text: "Tropical indoor plant known for its large, glossy leaves with natural splits.",
     price: 35.99,
+    stock: 5,
     category: "Indoor Plants",
     img: "https://images.unsplash.com/photo-1700213040197-d13ed110bfb9"
   },
@@ -26,7 +27,7 @@ const products = [
   {
     id: 4,
     title: "Boston Fern",
-    text: "Indoor hanging plant with lush fronds that thrive in humid environments.",
+     text: "Indoor hanging plant with lush fronds that thrive in humid environments.",
     price: 24.99,
     category: "Indoor Plants",
     img: "https://plus.unsplash.com/premium_photo-1664533228089-03a847afa6ab"
