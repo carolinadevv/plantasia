@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { getAsyncItemsByCategory } from "../data/getAsyncData";
-import  getAsyncData  from "../data/database";
+import { getAsyncItemsByCategory } from "../data/database";
+import getAsyncData from "../data/database";
 
 const ItemListContainer = ({ greeting }) => {
   const { catid } = useParams();
@@ -13,14 +13,14 @@ const ItemListContainer = ({ greeting }) => {
       const productsPromise = getAsyncData();
       productsPromise
         .then((products) => {
-          console.log("products", products), setProducts(products);
+          setProducts(products);
         })
         .catch((error) => alert(error));
     } else {
       const productsPromise = getAsyncItemsByCategory(catid);
       productsPromise
         .then((products) => {
-          console.log("products", products), setProducts(products);
+          setProducts(products);
         })
         .catch((error) => alert(error));
     }

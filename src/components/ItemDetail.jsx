@@ -1,5 +1,4 @@
 const ItemDetail = (props) => {
-  console.log("itemdetail", props);
   const { title, text, price, category, img } = props;
   return (
     <div className="">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getAsyncItemById } from "../data/getAsyncData";
+import { getAsyncItemById } from "../data/database";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -11,12 +11,11 @@ const ItemDetailContainer = () => {
     async function getProduct() {
       const data = await getAsyncItemById(id);
       setProduct(data);
-      console.log("prueba", data);
     }
     getProduct();
   }, [id]);
 
-  return <ItemDetail {...product} ></ItemDetail>;
+  return <ItemDetail {...product}></ItemDetail>;
 };
 
 export default ItemDetailContainer;

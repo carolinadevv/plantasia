@@ -14,7 +14,7 @@ const Item = (props) => {
           <p className="card-price">$ {price}</p>
         </div>
         <Link to={`/item/${id}`}>
-          <Button handleClick={console.log("clickeado")}>Ver Detalle</Button>
+          <Button>Ver Detalle</Button>
         </Link>
       </div>
     </div>
