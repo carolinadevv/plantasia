@@ -1,5 +1,7 @@
+import ItemCount from "./ItemCount";
+
 const ItemDetail = (props) => {
-  const { title, text, price, category, img } = props;
+  const { title, text, price, category, img, stock } = props;
   return (
     <div className="">
       <h2 className="">{category}</h2>
@@ -11,6 +13,7 @@ const ItemDetail = (props) => {
           <p className="">$ {price}</p>
         </div>
       </div>
+      <ItemCount max={stock} />
     </div>
   );
 };
