@@ -13,13 +13,19 @@ function ItemCount(props) {
     setCount(count - 1);
   };
 
-  console.log(props);
+  function handleClick() {
+    props.onSubmitCount(count);
+  }
+
   return (
     <div>
       <div>
         <button onClick={handleSubstract}>-</button>
         <span>{count}</span>
         <button onClick={handleAdd}>+</button>
+      </div>
+      <div>
+        <button onClick={handleClick}>Add to cart</button>
       </div>
     </div>
   );
