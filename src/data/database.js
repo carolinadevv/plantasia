@@ -5,6 +5,7 @@ import {
   getDocs,
   query,
   where,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -41,4 +42,9 @@ export async function getAsyncItemsByCategory(catID) {
   const productsSnapshot = await getDocs(q);
   const documentsData = productsSnapshot.docs.map((doc) => doc.data());
   return documentsData;
+}
+
+export async function createBuyOrder(orderData) {
+  const newOrder = await addDoc(collection(db, "orders"), orderData);
+  return newOrder.id;
 }

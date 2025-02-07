@@ -20,6 +20,8 @@ export function CartContextProvider(props) {
         setCartItems,
         countItemsInCart,
         addItem,
+        removeItem,
+        getTotalPrice,
         name: "carrito de compras",
       }}
     >
@@ -32,6 +34,21 @@ export function CartContextProvider(props) {
     const copyCartItems = [...cartItems];
     copyCartItems.push({ price, title, text, img, id, count });
     setCartItems(copyCartItems);
+  }
+
+  function removeItem(id) {
+    const newCartState = cartItems.filter((item) => item.id !== id);
+    setCartItems(newCartState);
+  }
+
+  function getTotalPrice() {
+    let totalPrice = 0;
+
+    cartItems.forEach((item) => {
+      totalPrice += item.count * item.price;
+    });
+
+    return totalPrice;
   }
 }
 
