@@ -26,7 +26,7 @@ function App() {
         </Routes>
 
         <footer>
-          <small>Created by Coderhouse 2025.</small>
+          <small>Created by Carolina Devia</small>
         </footer>
       </BrowserRouter>
     </CartContextProvider>

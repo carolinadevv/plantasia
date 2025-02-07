@@ -3,5 +3,3 @@ const Button = (props) => {
 };
 
 export default Button;
-
-// TODO: add classNames to button

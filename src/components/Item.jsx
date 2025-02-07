@@ -14,7 +14,7 @@ const Item = (props) => {
           <p className="card-price">$ {price}</p>
         </div>
         <Link to={`/item/${id}`}>
-          <Button>Ver Detalle</Button>
+          <Button>More details</Button>
         </Link>
       </div>
     </div>

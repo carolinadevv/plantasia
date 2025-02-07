@@ -28,7 +28,7 @@ const ItemDetail = (props) => {
       </div>
       {isAddedToCart ? (
         <Link to={`/cart`}>
-          <Button>go to cart</Button>
+          <Button>Go to cart</Button>
         </Link>
       ) : (
         <ItemCount onSubmitCount={onSubmitCount} max={stock} />
